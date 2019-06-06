@@ -4,19 +4,22 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
+import { SearchBooksComponent } from './components/search-books/search-books.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ShoppingCartComponent
+    ShoppingCartComponent,
+    SearchBooksComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot([
       { path: 'shopping-cart', component: ShoppingCartComponent },
-      // { path: '', redirectTo: 'rules', pathMatch: 'full' },
-      // { path: '**', redirectTo: 'rules', pathMatch: 'full' }
+      { path: 'search-books', component: SearchBooksComponent },
+      { path: '', redirectTo: 'search-books', pathMatch: 'full' },
+      { path: '**', redirectTo: 'search-books', pathMatch: 'full' },
     ])
   ],
   providers: [],
