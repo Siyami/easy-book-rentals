@@ -8,13 +8,13 @@
 <div class="container">
   <div class="row justify-content-md-center">
     <div class="col col-lg-10">
-      <form class="form-inline">
+      
         <div class="form-group mx-sm-2 mb-2">
           <!-- <label for="inputPassword2">Search By Title</label> -->
-          <input type="text" class="form-control" placeholder="Search by Title">
+          <input [(ngModel)]="userInput" type="text" class="form-control" placeholder="Search by Title">
         </div>
-        <button type="submit" class="btn btn-primary mb-2">Search</button>
-      </form>
+        <button (click)="searchBooks()" type="submit" class="btn btn-primary mb-2">Search</button>
+
     </div>
   </div>
 </div>
