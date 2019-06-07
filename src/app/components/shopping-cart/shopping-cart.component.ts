@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./shopping-cart.component.css']
 })
 export class ShoppingCartComponent implements OnInit {
+  books; 
 
   constructor() { }
 
   ngOnInit() {
+    this.books = [];
+    this.books.push(JSON.parse(sessionStorage.getItem('book')));
   }
 
 }

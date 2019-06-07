@@ -1,3 +1,75 @@
-<p>
-  shopping-cart works!
-</p>
+<div style="margin-top: 40px;" class="container">
+  <div class="row justify-content-md-center">
+    <div class="col col-lg-10">
+      <label for="cart-table"><h3>Shopping Cart</h3></label>
+      <table id="cart-table" class="table">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Term</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Price</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div
+                *ngFor="let book of books"
+                class="card mb-3"
+                style="max-width: 540px;"
+              >
+                <div class="row no-gutters">
+                  <div class="col-md-4">
+                    <img
+                      src="{{ book.imageLinks.smallThumbnail }}"
+                      class="card-img"
+                      alt="..."
+                    />
+                  </div>
+
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ book.title }}</h5>
+                      <p class="card-text">
+                          <small class="text-muted">ISBN: {{book.industryIdentifiers[0].identifier}}</small>
+                        </p>
+                      <p class="card-text">
+                        <small class="text-muted"
+                          >Author: {{ book.authors[0] }}</small
+                        >
+                      </p>
+                      <p class="card-text">
+                        <small class="text-muted"
+                          >Publisher: {{ book.publisher }}</small
+                        >
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td>55 day rental</td>
+            <td>1</td>
+            <td>$10.44</td>
+            <td>
+              <button class="btn btn-warning">Delete</button>
+            </td>
+          </tr>
+          <tr style="margin-top:100px;">
+            <td>
+              <button class="btn btn-warning">Add more books</button>
+            </td>
+            <td></td>
+            <td>Total</td>
+            <td>$10.44</td>
+            <td>
+              <button class="btn btn-warning">Checkout</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
