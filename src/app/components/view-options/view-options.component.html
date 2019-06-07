@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col">
+      <h4>{{ book.title }}</h4>
+      <h6>Author: {{ book.authors[0] }}</h6>
+    </div>
+  </div>
+  <div class="row justify-content-md-center">
+    <div class="col col-lg-4">
+      <div class="card" style="width: 18rem;">
+        <img src="{{ book.imageLinks.smallThumbnail }}" class="card-img-top" />
+        <div class="card-body">
+          <p class="card-text">
+            ISBN-13: {{ book.industryIdentifiers[0].identifier }}
+          </p>
+          <p class="card-text">
+            ISBN-10: {{ book.industryIdentifiers[1].identifier }}
+          </p>
+          <p class="card-text">Publisher: {{ book.publisher }}</p>
+          <p class="card-text">Publication Date: {{ book.publishedDate }}</p>
+          <p class="card-text">Pages: {{ book.pageCount }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col col-lg-8">
+      <div class="card text-center">
+        <div class="card-header">
+          <ul class="nav nav-tabs card-header-tabs">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Rent</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Buy</a>
+            </li>
+            <!-- <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              </li> -->
+          </ul>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Due Date Options:</h5>
+          <button class="btn btn-warning">
+            <span>Aug 1</span>
+            <strong>$10.44</strong>
+          </button>
+          <button class="btn btn-warning">
+            <span>Aug 1</span>
+            <strong>$10.44</strong>
+          </button>
+          <button class="btn btn-warning">
+            <span>Aug 1</span>
+            <strong>$10.44</strong>
+          </button>
+          <button class="btn btn-warning">
+            <input type="date">
+          </button>
+
+          <p class="card-text">Free shipping on rental returns</p>
+          <p class="card-text">21 day unconditional refund guarantee</p>
+          <a [routerLink]="['/shopping-cart']" class="btn btn-warning">Add to Cart</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

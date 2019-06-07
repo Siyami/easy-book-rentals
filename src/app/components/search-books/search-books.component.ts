@@ -25,4 +25,8 @@ export class SearchBooksComponent implements OnInit {
       });
   }
 
+  saveToStorage(book) {
+    sessionStorage.setItem('book', JSON.stringify(book));
+  }
+
 }

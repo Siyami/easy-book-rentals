@@ -8,16 +8,19 @@ import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.
 import { SearchBooksComponent } from './components/search-books/search-books.component';
 import { HttpService } from './services/http.service';
 import { FormsModule } from '@angular/forms';
+import { ViewOptionsComponent } from './components/view-options/view-options.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ShoppingCartComponent,
-    SearchBooksComponent
+    SearchBooksComponent,
+    ViewOptionsComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot([
+      { path: 'view-options', component: ViewOptionsComponent },
       { path: 'shopping-cart', component: ShoppingCartComponent },
       { path: 'search-books', component: SearchBooksComponent },
       { path: '', redirectTo: 'search-books', pathMatch: 'full' },

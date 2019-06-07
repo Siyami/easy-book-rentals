@@ -30,9 +30,9 @@
                     </div>
                 </div>
                 <div id="price-div" class="col col-lg-4">
-                  <p class="text-muted">Rent From $10.44</p>
-                  <p class="text-muted">Buy From $2.86</p>
-                  <button id="options-btn" class="btn btn-warning">View Options</button>
+                  <p class="text-muted">Rent From $5.44</p>
+                  <p class="text-muted">Buy From $9.86</p>
+                  <button (click)="saveToStorage(book.volumeInfo)" id="options-btn" class="btn btn-warning" [routerLink]="['/view-options']">View Options</button>
                 </div>
               </div>             
             </div>
