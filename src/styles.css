@@ -1,11 +1,38 @@
 #logo {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     cursor: pointer;
+    margin-left: 18px;
 }
 
 #cart {
     width: 20px;
     height: 20px;
     cursor: pointer;
+    margin-right: 45px;
 }
+
+#item-count {
+    margin-bottom: 0;
+    height: 14px;
+    margin-left: 7px;
+}
+
+#ebr {
+    cursor: pointer;
+}
+
+.nav-item {
+    margin-left: 20px;
+}
+
+#li-cart {
+    height: 40px;
+    align-items: center;
+    margin-left: 26px;
+}
+
+a.nav-link {
+    padding-top: 15px;
+}
+

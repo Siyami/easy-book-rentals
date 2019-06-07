@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <img [routerLink]="['/search-books']" id="logo" src="../assets/icons/books.svg" alt="logo" class="navbar-brand">
+  <img style="display: inline-block;" [routerLink]="['/search-books']" id="logo" src="../assets/icons/books.svg" alt="logo" class="navbar-brand">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -11,20 +11,21 @@
    
     <ul class="navbar-nav my-2 my-lg-0">
         <li class="nav-item">
-            <a class="nav-link" href="#">Return</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Help</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Live Chat</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Log In</a>
-          </li>
-          <li class="nav-item" [routerLink]="['/shopping-cart']">
-            <img id="cart" src="../assets/icons/shopping-cart.svg" alt="Shopping Cart">
-          </li>
+          <a class="nav-link" href="#"><b>Return</b></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><b>Help</b></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><b>Live Chat</b></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><b>Log In</b></a>
+        </li>
+        <li id="li-cart" class="nav-item" [routerLink]="['/shopping-cart']">
+          <label id="item-count" style="display: block" for="cart" class="text-muted"><small>0</small></label>
+          <img id="cart" src="../assets/icons/shopping-cart.svg" alt="Shopping Cart">
+        </li>
     </ul>
   </div>
 </nav>
