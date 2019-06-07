@@ -36,3 +36,20 @@ a.nav-link {
     padding-top: 15px;
 }
 
+#search-div {
+    margin-top: 100px;
+}
+
+#search-btn {
+    margin-top: 54px;
+    width: 150px;
+}
+
+#options-btn {
+    width: 150px;
+}
+
+#price-div {
+    margin-top: 55px;
+}
+

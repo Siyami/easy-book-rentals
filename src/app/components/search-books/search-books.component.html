@@ -1,39 +1,43 @@
 <div class="container">
-  <div class="row justify-content-md-center">    
-    <div class="col col-lg-10">
-        <h2>Find Your Book</h2>
+  <div id="search-div" class="row justify-content-md-center">    
+    <div class="col col-lg-4" style="padding-right: 0px;">
+        <label for="user-inp"><h2>Find Your Book</h2></label>
+        <input id="user-inp" [(ngModel)]="userInput" type="text" class="form-control" placeholder="Search by Title">    
     </div>
+    <div class="col col-lg-2" style="padding-left: 10px;">
+      <button id="search-btn" (click)="searchBooks()" type="submit" class="btn btn-warning">Search</button>
+    </div>    
   </div>
 </div>
+
 <div class="container">
   <div class="row justify-content-md-center">
-    <div class="col col-lg-10">
-      
-        <div class="form-group mx-sm-2 mb-2">
-          <!-- <label for="inputPassword2">Search By Title</label> -->
-          <input [(ngModel)]="userInput" type="text" class="form-control" placeholder="Search by Title">
+      <div class="col" style="margin-top: 50px;">
+        <div *ngFor="let book of books" class="card mb-3">
+          <div class="row no-gutters">
+            <div class="col-lg-3">
+              <img *ngIf="book.volumeInfo.imageLinks" src="{{book.volumeInfo.imageLinks.smallThumbnail}}" class="card-img" alt="...">
+            </div>
+            <div class="col-lg-8">
+              <div class="row">
+                <div class="col col-lg-8">
+                    <div class="card-body">
+                      <h5 class="card-title">{{book.volumeInfo.title}}</h5>
+                      <p  *ngIf="book.volumeInfo.authors" class="card-text text-muted">Author: {{book.volumeInfo.authors[0]}}</p>
+                      <p *ngIf="book.volumeInfo.publisher" class="card-text text-muted">Publisher: {{book.volumeInfo.publisher}}</p>
+                      <p *ngIf="book.volumeInfo.industryIdentifiers" class="card-text text-muted">ISBN-13: {{book.volumeInfo.industryIdentifiers[0].identifier}}</p>
+                      <p *ngIf="book.volumeInfo.industryIdentifiers" class="card-text text-muted">ISBN-10: {{book.volumeInfo.industryIdentifiers[1].identifier}}</p>
+                    </div>
+                </div>
+                <div id="price-div" class="col col-lg-4">
+                  <p class="text-muted">Rent From $10.44</p>
+                  <p class="text-muted">Buy From $2.86</p>
+                  <button id="options-btn" class="btn btn-warning">View Options</button>
+                </div>
+              </div>             
+            </div>
+          </div>
         </div>
-        <button (click)="searchBooks()" type="submit" class="btn btn-primary mb-2">Search</button>
-
-    </div>
-  </div>
-</div>
-
-<div >
-  <div *ngFor="let book of books" class="card mb-3" style="max-width: 540px;">
-    <div class="row no-gutters">
-      <div class="col-md-4">
-        <img *ngIf="book.volumeInfo.imageLinks" src="{{book.volumeInfo.imageLinks.smallThumbnail}}" class="card-img" alt="...">
       </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">{{book.volumeInfo.title}}</h5>
-          <p  class="card-text text-muted">Author: {{book.volumeInfo.authors[0]}}</p>
-          <p *ngIf="book.volumeInfo.publisher" class="card-text text-muted">Publisher: {{book.volumeInfo.publisher}}</p>
-          <p *ngIf="book.volumeInfo.industryIdentifiers" class="card-text text-muted">ISBN-13: {{book.volumeInfo.industryIdentifiers[0].identifier}}</p>
-          <p *ngIf="book.volumeInfo.industryIdentifiers" class="card-text text-muted">ISBN-10: {{book.volumeInfo.industryIdentifiers[1].identifier}}</p>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
