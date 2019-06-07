@@ -1,6 +1,6 @@
-<div class="container">
+<div style="margin-top: 50px;" class="container">
   <div class="row justify-content-md-center">
-    <div class="col">
+    <div style="margin-bottom: 15px;" class="col">
       <h4>{{ book.title }}</h4>
       <h6>Author: {{ book.authors[0] }}</h6>
     </div>
@@ -28,10 +28,10 @@
         <div class="card-header">
           <ul class="nav nav-tabs card-header-tabs">
             <li class="nav-item">
-              <a class="nav-link active" href="#">Rent</a>
+              <a class="nav-link active">Rent</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Buy</a>
+              <a class="nav-link">Buy</a>
             </li>
             <!-- <li class="nav-item">
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
@@ -41,22 +41,23 @@
         <div class="card-body">
           <h5 class="card-title">Due Date Options:</h5>
           <button class="btn btn-warning">
-            <span>Aug 1</span>
+            <span>Due Aug 1</span><br>
             <strong>$10.44</strong>
           </button>
           <button class="btn btn-warning">
-            <span>Aug 1</span>
-            <strong>$10.44</strong>
+            <span>Due Aug 10</span><br>
+            <strong>$10.58</strong>
           </button>
           <button class="btn btn-warning">
-            <span>Aug 1</span>
-            <strong>$10.44</strong>
+            <span>Due Aug 31</span><br>
+            <strong>$10.92</strong>
           </button>
-          <button class="btn btn-warning">
-            <input type="date">
+          <button id="date-btn" class="btn btn-warning">
+            <span>Chose your due</span><br>
+            date
           </button>
 
-          <p class="card-text">Free shipping on rental returns</p>
+          <p style="margin-top: 15px;" class="card-text">Free shipping on rental returns</p>
           <p class="card-text">21 day unconditional refund guarantee</p>
           <a [routerLink]="['/shopping-cart']" class="btn btn-warning">Add to Cart</a>
         </div>
