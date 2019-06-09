@@ -6,7 +6,15 @@
     </div>
     <div class="col col-lg-2" style="padding-left: 10px;">
       <button id="search-btn" (click)="searchBooks()" type="submit" class="btn btn-warning">Search</button>
-    </div>    
+    </div>   
+  </div>
+  <div id="btn-div" class="row justify-content-md-center">
+      <button (click)="changeBooksOnClick('dad'); toggleActive(0);" type="button" id="0" class="btn btn-primary toggle-btn">Father's Day</button>
+      <button (click)="changeBooksOnClick('game of thrones'); toggleActive(1);" type="button" id="1" class="btn btn-outline-primary toggle-btn">Most Popular</button>
+      <button (click)="changeBooksOnClick('Where the Crawdads Sing'); toggleActive(2);" id="2" type="button" class="btn btn-outline-primary toggle-btn">The Latest</button>
+      <button (click)="changeBooksOnClick('New York'); toggleActive(3);"  type="button" id="3" class="btn btn-outline-primary toggle-btn">Staff picks</button>
+      <button (click)="changeBooksOnClick('classics'); toggleActive(4);" type="button" id="4" class="btn btn-outline-primary toggle-btn">Deals</button>
+      <button (click)="changeBooksOnClick('western'); toggleActive(5);" type="button" id="5" class="btn btn-outline-primary toggle-btn">Rare finds</button>
   </div>
 </div>
 
@@ -27,7 +35,29 @@
                       <p *ngIf="book.volumeInfo.publisher" class="card-text text-muted">Publisher: {{book.volumeInfo.publisher}}</p>
                       <p *ngIf="book.volumeInfo.industryIdentifiers" class="card-text text-muted">ISBN-13: {{book.volumeInfo.industryIdentifiers[0].identifier}}</p>
                       <p *ngIf="book.volumeInfo.industryIdentifiers" class="card-text text-muted">ISBN-10: {{book.volumeInfo.industryIdentifiers[1].identifier}}</p>
-                    </div>
+                      <button class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">Description</button>
+                      <!-- Modal -->
+                      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">{{book.volumeInfo.title}}</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>{{book.volumeInfo.description}}</p>
+                                <!-- <a href="{{book.volumeInfo.imageLinks.previewLink}}"></a>                             -->
+                            </div>
+                            
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
                 </div>
                 <div id="price-div" class="col col-lg-4">
                   <p class="text-muted">Rent From $5.44</p>

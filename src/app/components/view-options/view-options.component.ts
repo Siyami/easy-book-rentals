@@ -11,7 +11,6 @@ export class ViewOptionsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    debugger
     this.book = JSON.parse(sessionStorage.getItem('book'));
   }
 
