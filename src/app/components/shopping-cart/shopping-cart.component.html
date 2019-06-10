@@ -33,8 +33,11 @@
                     <div class="card-body">
                       <h5 class="card-title">{{ book.title }}</h5>
                       <p class="card-text">
-                          <small class="text-muted">ISBN: {{book.industryIdentifiers[0].identifier}}</small>
-                        </p>
+                        <small class="text-muted"
+                          >ISBN:
+                          {{ book.industryIdentifiers[0].identifier }}</small
+                        >
+                      </p>
                       <p class="card-text">
                         <small class="text-muted"
                           >Author: {{ book.authors[0] }}</small
@@ -59,7 +62,9 @@
           </tr>
           <tr style="margin-top:100px;">
             <td>
-              <button [routerLink]="['/search-books']" class="btn btn-warning">Add more books</button>
+              <button [routerLink]="['/search-books']" class="btn btn-warning">
+                Add more books
+              </button>
             </td>
             <td></td>
             <td>Total</td>

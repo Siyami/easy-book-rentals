@@ -16,7 +16,7 @@ export class SearchBooksComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.changeBooksOnClick('kid');
+    this.changeBooksOnClick('dad');
   }
 
   searchBooks() {
@@ -33,7 +33,6 @@ export class SearchBooksComponent implements OnInit {
       buttons[i].classList.remove('btn-primary');
       buttons[i].classList.add('btn-outline-primary');
     }
-
     buttons[id].classList.remove('btn-outline-primary');
     buttons[id].classList.add('btn-primary');
   }
